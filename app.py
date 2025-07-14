@@ -43,6 +43,10 @@ def previsao(interpreter, image):
     input_details = interpreter.get_input_details()
     output_details = interpreter.get_output_details()
 
+    st.write("Input Details:", input_details)
+    st.write("Output Details:", output_details)
+
+
     interpreter.set_tensor(input_details[0]['index'], image)
     interpreter.invoke()
     output_data = interpreter.get_tensor(output_details[0]['index'])
